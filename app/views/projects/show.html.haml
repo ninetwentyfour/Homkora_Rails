@@ -1,0 +1,46 @@
+%div.projects.view
+	%div.project-view
+		%h2 Total Time
+		#totalTime
+			= @project.total_time
+	#project-view-break
+	%div.project-view
+		%h2 Title
+		= @project.title
+	%div.project-view
+		%h2 Description
+		= @project.description
+	%div.project-view
+		%h2 Created
+		= @project.created_at.strftime("%a, %b %e %Y")
+	%div.project-view
+		%h2 Last Updated
+		= @project.updated_at.strftime("%a, %b %e %Y")
+%br
+%div.bottomLinks
+	%h3 Actions
+	%br
+		= link_to image_tag("icon_pencil.png", :alt => "Edit", :title => "Edit")+'Edit Project', edit_project_path(@project), :class => "button addTimerIndex"
+		= link_to image_tag("icon_delete.png", :alt => "Delete", :title => "Delete")+'Delete Project', @project, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "button addTimerIndex"
+		= link_to image_tag("icon_list_bullets.png", :alt => "List", :title => "List")+"List Projects", projects_path, :class => "button addTimerIndex"
+		= link_to image_tag("icon_storage.png", :alt => "New", :title => "New")+"New Project", new_project_path, :class => "button addTimerIndex"
+%div.related		
+	%h3 Listing timers
+	%br
+	%table
+		%tr
+			%th Time
+			%th Title
+			%th Description
+			%th
+			%th
+			%th
+
+		- @project.timers.each do |timer|
+			%tr
+				%td= timer.time
+				%td= timer.title
+				%td= timer.description
+				%td= link_to image_tag("icon_eye.png", :alt => "View", :title => "View"), timer
+				%td= link_to image_tag("icon_pencil.png", :alt => "Edit", :title => "Edit"), edit_timer_path(timer)
+				%td= link_to image_tag("icon_delete.png", :alt => "Delete", :title => "Delete"), timer, :method => :delete, :data => { :confirm => 'Are you sure?' }

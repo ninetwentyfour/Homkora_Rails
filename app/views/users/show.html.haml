@@ -1,0 +1,20 @@
+%div.users.view
+	%div.project-view
+		= $gravatar2
+		%h2 User Name
+		= @user.username
+	%div.project-view
+		%h2 API Key
+		= @user.api_key
+	#project-view-break
+	%div.project-view
+		%h2 Email
+		= @user.email
+	%div.project-view
+		%h2 Created
+		= @user.created_at.strftime("%a, %b %e %Y")
+%br
+%div.bottomLinks
+	%h3 Actions
+	%br
+		= link_to image_tag("icon_pencil.png", :alt => "Edit", :title => "Edit")+'Edit User', edit_user_registration_path(@user), :class => "button addTimerIndex"

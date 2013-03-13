@@ -1,0 +1,25 @@
+#clock1
+%div.timers.form.timer-form
+  = form_for @timer, :html => { :onsubmit => 'return(checkForm(this));' } do |f|
+    - if @timer.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@timer.errors.count, "error")} prohibited this timer from being saved:"
+        %ul
+          - @timer.errors.full_messages.each do |msg|
+            %li= msg
+
+    %fieldset
+      = f.hidden_field :time
+      .field
+        = f.label "Project"
+        = collection_select(:timer, :project_id, Project.where( {:user_id => current_user._id} ), :_id, :title)
+      %div.timerAddFormSpacer
+      .field
+        = f.label :title
+        = f.text_field :title
+      %div.timerAddFormSpacer
+      .field
+        = f.label :description
+        = f.text_field :description
+    .submit.center-save
+      = submit_tag

@@ -1,0 +1,30 @@
+%p#notice= notice
+%div.timers.view
+	%div.project-view
+		%h2 Time
+		= @timer.time
+	%div.project-view
+		%h2 Project
+		= link_to @timer.project.title, project_path(@timer.project)
+	#project-view-break
+	%div.project-view
+		%h2 Title
+		= @timer.title
+	%div.project-view
+		%h2 Description
+		= @timer.description
+	%div.project-view
+		%h2 Created
+		= @timer.created_at.strftime("%a, %b %e %Y")
+	%div.project-view
+		%h2 Last Updated
+		= @timer.updated_at.strftime("%a, %b %e %Y")
+%br
+%br
+%div.bottomLinks
+	%h3 Actions
+	%br
+		= link_to image_tag("icon_pencil.png", :alt => "Edit", :title => "Edit")+'Edit Timer', edit_timer_path(@timer), :class => "button addTimerIndex"
+		= link_to image_tag("icon_delete.png", :alt => "Delete", :title => "Delete")+'Delete Timer', @timer, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "button addTimerIndex"
+		= link_to image_tag("icon_list_bullets.png", :alt => "List", :title => "List")+"List Timers", timers_path, :class => "button addTimerIndex"
+		= link_to image_tag("icon_timer.png", :alt => "New", :title => "New")+"New Timer", new_timer_path, :class => "button addTimerIndex"

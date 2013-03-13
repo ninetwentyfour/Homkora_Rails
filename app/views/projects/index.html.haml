@@ -1,0 +1,31 @@
+%h1 Listing projects
+%br
+%table
+  %tr
+    %th Title
+    %th Total Time
+    %th Description
+    %th
+    %th
+    %th
+
+  - @projects.each do |project|
+    %tr
+      %td= project.title
+      %td= project.total_time
+      %td= project.description
+      %td= link_to image_tag("icon_eye.png", :alt => "View", :title => "View"), project
+      %td= link_to image_tag("icon_pencil.png", :alt => "Edit", :title => "Edit"), edit_project_path(project)
+      %td= link_to image_tag("icon_delete.png", :alt => "Delete", :title => "Delete"), project, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%p
+  = will_paginate @projects
+%br
+%div.bottomLinks
+  %h3 Actions
+  %br
+    = link_to image_tag("icon_storage.png", :alt => "New", :title => "New")+"New Project", new_project_path, :class => "button addTimerIndex"
+
+    = link_to image_tag("icon_list_bullets.png", :alt => "List", :title => "List")+"List Timers", timers_path, :class => "button addTimerIndex"
+
+    = link_to image_tag("icon_download.png", :alt => "Export", :title => "Export")+"Export Projects to CSV", projects_path(:format => :csv), :class => "button addTimerIndex"
+

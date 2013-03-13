@@ -1,0 +1,30 @@
+!!!
+%html
+	%head
+		%meta{:charset => "utf-8"}
+		%title Time Tracking Made Simple | Homkora
+		= stylesheet_link_tag    "application", :media => "all"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+	%body
+		%header
+			%h1
+				%a{:href => "/"} Homkora
+			%nav
+				%ul
+					- if user_signed_in?
+						= render "layouts/user_nav"
+					- else
+						= render "layouts/generic_nav"
+		#container
+			%noscript
+				Homkora must have javascript enabled.
+			#content
+				.flash_notice
+				- flash.each do |name, msg|
+					= content_tag :div, msg, id: "flash_#{name}", class: "alert alert-#{name.to_s == 'notice' ? 'success' : name}"
+				= yield
+				%div{:style => "clear:both;"}
+			%div{:style => "clear:both;"}
+		%footer.transparent_class
+			= render "layouts/footer"
