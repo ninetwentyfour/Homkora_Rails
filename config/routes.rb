@@ -10,6 +10,7 @@ Homkora::Application.routes.draw do
   match "/help" => "home#help", :as => "help"
 
   devise_for :users
+  resources :token_authentications, :only => [:create, :destroy]
   resources :users, :only => [:show]
 
   resources :projects

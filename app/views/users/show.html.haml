@@ -5,7 +5,7 @@
 		= @user.username
 	%div.project-view
 		%h2 API Key
-		= @user.api_key
+		= @user.authentication_token || "No Key Available"
 	#project-view-break
 	%div.project-view
 		%h2 Email

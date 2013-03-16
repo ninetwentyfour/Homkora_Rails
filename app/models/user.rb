@@ -8,7 +8,7 @@ class User
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :token_authenticatable
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
@@ -40,11 +40,10 @@ class User
   # field :locked_at,       :type => Time
 
   ## Token authenticatable
-  # field :authentication_token, :type => String
+  field :authentication_token, :type => String
   
   field :username,   :type => String
   field :roles_mask, :type => Integer, :default => 0
-  field :api_key,   :type => String
   validates_presence_of :username
   validates_uniqueness_of :username, :email, :case_sensitive => false
   
@@ -53,10 +52,10 @@ class User
   
   has_many :projects, :dependent => :destroy
   
-  before_create :create_api_key
+  after_create :create_token
   
   def create_api_key
-    self.api_key = SecureRandom.base64(12)
+    self.reset_authentication_token!
   end
   
   protected

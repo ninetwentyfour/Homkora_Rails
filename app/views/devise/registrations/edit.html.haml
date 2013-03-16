@@ -10,6 +10,7 @@
     = f.label :email
     %br/
     = f.email_field :email
+  %hr
   %p
     = f.label :password
     %i (leave blank if you don't want to change it)
@@ -24,6 +25,18 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password
+  %hr
+  %p
+    = f.label :token_authentication_key, "API Key"
+    %br/
+    = resource.authentication_token.blank? ? "Key Empty" : resource.authentication_token
+    %br/
+    %br/
+    = link_to "Generate Key", token_authentications_path(:user_id => resource.id), :method => :post, :confirm => "Are you sure?"
+    %br/
+    = link_to "Delete Key", token_authentication_path(resource), :method => :delete, :confirm => "Are you sure?"
+    %br/
+    %br/
   .submit= f.submit "Update"
 .devise_sidebar
   %ul
