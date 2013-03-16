@@ -87,9 +87,8 @@ class TimersController < ApplicationController
         { :project_id.in => current_user.projects.map{ |u| u._id } }
       ).paginate(:page => params[:page], :per_page => 10)
     else
-      @timers = Timer.any_of(
-        { :project_id.in => current_user.projects.map{ |u| u._id } }
-      ).search_tank(params[:q])
+      @timers = Timer.search_tank(params[:q])
+      @timers.select! { |timer| current_user.projects.map{ |u| u._id }.include? timer.project_id  }
     end
 
     render :action => 'index'
