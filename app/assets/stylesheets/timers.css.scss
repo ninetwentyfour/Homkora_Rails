@@ -1,3 +1,26 @@
 // Place all the styles related to the timers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.styled-select select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+.styled-select {
+   width: 240px;
+   height: 34px;
+   overflow: hidden;
+   background: url(http://d7519xe306djd.cloudfront.net/assets/down_arrow_select.png) no-repeat right #282829;
+	background: none repeat scroll 0 0 #282829;
+	border-color: #0D0E0E #0D0E0E #333436;
+	border-style: solid;
+	border-width: 1px;
+	color: #FFFFFF;
+	font-size: 19px;
+   }

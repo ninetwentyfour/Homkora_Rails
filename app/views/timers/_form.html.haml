@@ -12,7 +12,8 @@
       = f.hidden_field :time
       .field
         = f.label "Project"
-        = collection_select(:timer, :project_id, Project.where( {:user_id => current_user._id} ), :_id, :title)
+        .styled-select
+          = collection_select(:timer, :project_id, Project.where( {:user_id => current_user._id} ), :_id, :title)
       %div.timerAddFormSpacer
       .field
         = f.label :title
