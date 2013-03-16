@@ -15,16 +15,16 @@
 //= require_tree .
 
 //create the clock
-$(function() {
-	$('#clock1').stopwatch();
-});
-function checkForm(frm) {
-	frm.submit.disabled=true;
-	var o = $('div.display').text();
-	if (o){
-		document.getElementById("timer_time").value = o;
-		return true; //returns true if all validation passes
-	}else{
-		return false;
-	}
-}
+// $(function() {
+// 	$('#clock1').stopwatch();
+// });
+// function checkForm(frm) {
+// 	frm.submit.disabled=true;
+// 	var o = $('div.display').text();
+// 	if (o){
+// 		document.getElementById("timer_time").value = o;
+// 		return true; //returns true if all validation passes
+// 	}else{
+// 		return false;
+// 	}
+// }
