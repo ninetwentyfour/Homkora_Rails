@@ -8,7 +8,8 @@ checkForm = (frm) ->
   frm.submit.disabled = true
   time = $("div.display").text()
   if time
-    $("#timer_time").value = time
+    $("#timer_time").val(time)
     true
   else
     false
+window.checkForm = checkForm
