@@ -1,24 +1,33 @@
-%h1 Listing projects
+= link_to image_tag("icon_storage.png", :alt => "New", :title => "New")+"New Project", new_project_path, :class => "button addTimerIndex"
 %br
-%table
-  %tr
-    %th Title
-    %th Total Time
-    %th Description
-    %th
-    %th
-    %th
-
-  - @projects.each do |project|
+%br
+%form{:action => projects_search_path, :method => "get", :id => "ProjectSearchForm"}
+  .searchBox
+    = text_field_tag :q, nil, :placeholder => 'Enter search term...'
+    .submit
+      = submit_tag "Search", :name => nil
+.projects.index
+  %h1 Projects
+  %br
+  %table
     %tr
-      %td= project.title
-      %td= project.total_time
-      %td= project.description
-      %td= link_to image_tag("icon_eye.png", :alt => "View", :title => "View"), project
-      %td= link_to image_tag("icon_pencil.png", :alt => "Edit", :title => "Edit"), edit_project_path(project)
-      %td= link_to image_tag("icon_delete.png", :alt => "Delete", :title => "Delete"), project, :method => :delete, :data => { :confirm => 'Are you sure?' }
-%p
-  = will_paginate @projects
+      %th Title
+      %th Total Time
+      %th Description
+      %th
+      %th
+      %th
+
+    - @projects.each do |project|
+      %tr
+        %td= project.title
+        %td= project.total_time
+        %td= project.description
+        %td= link_to image_tag("icon_eye.png", :alt => "View", :title => "View"), project
+        %td= link_to image_tag("icon_pencil.png", :alt => "Edit", :title => "Edit"), edit_project_path(project)
+        %td= link_to image_tag("icon_delete.png", :alt => "Delete", :title => "Delete"), project, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %p
+    = will_paginate @projects
 %br
 %div.bottomLinks
   %h3 Actions

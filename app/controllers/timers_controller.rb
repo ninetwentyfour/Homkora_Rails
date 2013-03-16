@@ -80,4 +80,18 @@ class TimersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+    if params[:q].blank?
+      @timers = Timer.any_of(
+        { :project_id.in => current_user.projects.map{ |u| u._id } }
+      ).paginate(:page => params[:page], :per_page => 10)
+    else
+      @timers = Timer.any_of(
+        { :project_id.in => current_user.projects.map{ |u| u._id } }
+      ).search_tank(params[:q])
+    end
+
+    render :action => 'index'
+  end
 end

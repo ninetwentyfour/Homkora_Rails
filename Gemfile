@@ -20,6 +20,9 @@ gem "comma"
 gem 'dalli'
 gem 'sendgrid'
 
+# Search
+gem 'tanker'
+
 gem 'unicorn'
 
 

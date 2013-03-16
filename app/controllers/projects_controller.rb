@@ -77,4 +77,11 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+    @projects = Project.search_tank(params[:q],  :conditions => {:user_id => current_user.id})
+
+    render :action => 'index'
+  end
+  
 end

@@ -1,7 +1,4 @@
 Homkora::Application.routes.draw do
-  resources :timers
-
-
   root :to => "home#index"
   match "/api" => "home#api", :as => "api"
   match "/faq" => "home#faq", :as => "faq"
@@ -12,6 +9,10 @@ Homkora::Application.routes.draw do
   devise_for :users
   resources :token_authentications, :only => [:create, :destroy]
   resources :users, :only => [:show]
-
+  
+  match "projects/search" => "projects#search", :as => "projects_search"
   resources :projects
+  
+  match "timers/search" => "timers#search", :as => "timers_search"
+  resources :timers
 end

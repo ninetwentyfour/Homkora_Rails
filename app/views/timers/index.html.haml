@@ -1,3 +1,11 @@
+= link_to image_tag("icon_timer.png", :alt => "New", :title => "New")+"New Timer", new_timer_path, :class => "button addTimerIndex"
+%br
+%br
+%form{:action => timers_search_path, :method => "get", :id => "TimerSearchForm"}
+  .searchBox
+    = text_field_tag :q, nil, :placeholder => 'Enter search term...'
+    .submit
+      = submit_tag "Search", :name => nil
 %h1 Listing timers
 %br
 %table
@@ -23,8 +31,6 @@
 %div.bottomLinks
   %h3 Actions
   %br
-    = link_to image_tag("icon_timer.png", :alt => "New", :title => "New")+"New Timer", new_timer_path, :class => "button addTimerIndex"
-
     = link_to image_tag("icon_list_bullets.png", :alt => "List", :title => "List")+"List Projects", projects_path, :class => "button addTimerIndex"
 
     = link_to image_tag("icon_download.png", :alt => "Export", :title => "Export")+"Export Timers to CSV", timers_path(:format => :csv), :class => "button addTimerIndex"
