@@ -66,5 +66,7 @@ module Homkora
       g.view_specs false
       g.helper_specs false
     end
+    
+    config.assets.initialize_on_precompile = false
   end
 end
