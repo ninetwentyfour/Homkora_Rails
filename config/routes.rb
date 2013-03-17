@@ -5,6 +5,7 @@ Homkora::Application.routes.draw do
   match "/about" => "home#about", :as => "about"
   match "/privacy" => "home#privacy", :as => "privacy"
   match "/help" => "home#help", :as => "help"
+  match "/airbrake" => "home#airbrake", :as => "airbrake"
 
   devise_for :users
   resources :token_authentications, :only => [:create, :destroy]

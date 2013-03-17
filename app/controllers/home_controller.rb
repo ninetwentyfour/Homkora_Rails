@@ -17,4 +17,8 @@ class HomeController < ApplicationController
   def help
   end
   
+  def airbrake
+    raise "error"
+  end
+  
 end
