@@ -8,7 +8,7 @@ class Project
   field :total_time, type: String, default: "00:00:00"
   field :description, type: String
   
-  belongs_to :user
+  belongs_to :user, index: true
   
   has_many :timers, :dependent => :destroy
   

@@ -8,7 +8,7 @@ class Timer
   field :title, type: String
   field :description, type: String
   
-  belongs_to :project
+  belongs_to :project, index: true
   
   validates_presence_of :title, :description
   

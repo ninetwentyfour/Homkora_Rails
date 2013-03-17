@@ -44,6 +44,10 @@ class User
   
   field :username,   :type => String
   field :roles_mask, :type => Integer, :default => 0
+  
+  index({ username: 1 }, { unique: true, background: true, name: "username_index" })
+  index({ email: 1 }, { unique: true, background: true, name: "useremail_index" })
+  
   validates_presence_of :username, :email
   validates_uniqueness_of :username, :email, :case_sensitive => false
   
