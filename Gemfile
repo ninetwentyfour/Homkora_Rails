@@ -54,6 +54,8 @@ group :test do
 	gem 'fabrication'
 	gem 'faker'
 	gem 'shoulda-matchers'
+	gem 'typhoeus'
+	gem 'vcr'
 end
 
 group :production do

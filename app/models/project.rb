@@ -71,7 +71,7 @@ class Project
     indexes :id
     indexes :total_time
     indexes :user_id
-    
+  
     functions do
       {
         1 => '-age',
@@ -79,5 +79,4 @@ class Project
       }
     end
   end
-  
 end

@@ -55,7 +55,9 @@ class User
   after_create :create_token
   
   def create_token
-    self.reset_authentication_token!
+    unless Rails.env.test?
+      self.reset_authentication_token!
+    end
   end
   
   protected
