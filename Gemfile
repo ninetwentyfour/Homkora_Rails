@@ -24,6 +24,7 @@ gem 'sendgrid'
 gem 'tanker'
 
 gem 'unicorn'
+gem "airbrake"
 
 
 # Gems used only for assets and not required
