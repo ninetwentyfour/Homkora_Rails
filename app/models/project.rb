@@ -15,8 +15,10 @@ class Project
   validates_presence_of :title, :description
   
   # define the callbacks to update or delete the index
-  after_save :update_tank_indexes
-  after_destroy :delete_tank_indexes
+  after_save :update_tank_indexes, :unless => Proc.new{ Rails.env.test? }
+  after_destroy :delete_tank_indexes, :unless => Proc.new{ Rails.env.test? }
+  
+  attr_accessible :title, :description
   
   def update_project_time
     unless self.timers.blank?

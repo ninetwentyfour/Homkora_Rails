@@ -65,11 +65,9 @@ GEM
     excon (0.20.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    factory_girl (4.2.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.2.1)
-      factory_girl (~> 4.2.0)
-      railties (>= 3.0.0)
+    fabrication (2.6.3)
+    faker (1.1.2)
+      i18n (~> 0.5)
     fog (1.10.0)
       builder
       excon (~> 0.14)
@@ -220,7 +218,8 @@ DEPENDENCIES
   dalli
   database_cleaner
   devise
-  factory_girl_rails
+  fabrication
+  faker
   gravatar_image_tag
   haml-rails
   jquery-rails

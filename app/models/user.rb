@@ -44,7 +44,7 @@ class User
   
   field :username,   :type => String
   field :roles_mask, :type => Integer, :default => 0
-  validates_presence_of :username
+  validates_presence_of :username, :email
   validates_uniqueness_of :username, :email, :case_sensitive => false
   
   attr_accessor :login
@@ -54,7 +54,7 @@ class User
   
   after_create :create_token
   
-  def create_api_key
+  def create_token
     self.reset_authentication_token!
   end
   

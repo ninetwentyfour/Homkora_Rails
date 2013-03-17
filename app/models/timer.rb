@@ -13,10 +13,12 @@ class Timer
   validates_presence_of :title, :description
   
   # define the callbacks to update or delete the index
-  after_save :update_tank_indexes
-  after_destroy :delete_tank_indexes
+  after_save :update_tank_indexes, :unless => Proc.new{ Rails.env.test? }
+  after_destroy :delete_tank_indexes, :unless => Proc.new{ Rails.env.test? }
   
   after_save :update_project_time
+  
+  attr_accessible :title, :description, :time, :project_id
   
   # Update the projects total_time
   def update_project_time

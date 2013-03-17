@@ -51,7 +51,8 @@ gem "rspec-rails", :group => [:test, :development]
 group :test do
   gem "database_cleaner"
   gem "mongoid-rspec"
-	gem "factory_girl_rails"
+	gem 'fabrication'
+	gem 'faker'
 	gem 'shoulda-matchers'
 end
 
