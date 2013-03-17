@@ -24,7 +24,6 @@ gem 'sendgrid'
 gem 'tanker'
 
 gem 'unicorn'
-gem "airbrake"
 
 
 # Gems used only for assets and not required
@@ -55,6 +54,11 @@ group :test do
 	gem 'fabrication'
 	gem 'faker'
 	gem 'shoulda-matchers'
+end
+
+group :production do
+  gem 'newrelic_rpm'
+  gem "airbrake"
 end
 
 # To use ActiveModel has_secure_password
