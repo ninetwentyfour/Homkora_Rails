@@ -83,5 +83,5 @@ Homkora::Application.configure do
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger.const_get(ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'INFO')
   
-  config.action_controller.asset_host = "http://d7519xe306djd.cloudfront.net"
+  config.action_controller.asset_host = ENV["CLOUDFRONT_URL"]
 end
