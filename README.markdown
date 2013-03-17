@@ -62,6 +62,14 @@ After the configuration variables are added, you can deploy the app.
 
     git push heroku master
 
+Compile the assets
+
+    heroku run rake assets:precompile
+
+Create the MongoDB indexes
+
+    heroku run rake db:mongoid:create_indexes
+
 When the deploy is finished, you can test the install with
 
     curl http://YOUR_HEROKU_APP_URL/
