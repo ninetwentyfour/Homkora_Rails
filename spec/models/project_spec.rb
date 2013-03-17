@@ -16,9 +16,29 @@ describe Project do
   end
   
   describe "add_time_together" do
-    it "should add together two time" do
+    it "should add together two times" do
       time = @project.add_time_together("00:00:48","00:30:12")
       time.should == "00:31:00"
+    end
+    
+    it "should handle rolling over to minutes" do
+      time = @project.add_time_together("00:00:48","00:00:12")
+      time.should == "00:01:00"
+    end
+    
+    it "should handle rolling over to hours" do
+      time = @project.add_time_together("00:58:00","00:02:00")
+      time.should == "01:00:00"
+    end
+    
+    it "should handle 100 hours" do
+      time = @project.add_time_together("85:00:00","15:00:00")
+      time.should == "100:00:00"
+    end
+    
+    it "should handle 1000 hours" do
+      time = @project.add_time_together("885:00:00","115:00:00")
+      time.should == "1000:00:00"
     end
   end
   

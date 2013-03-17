@@ -52,13 +52,8 @@ class User
   
   has_many :projects, :dependent => :destroy
   
-  after_create :create_token
-  
-  def create_token
-    unless Rails.env.test?
-      self.reset_authentication_token!
-    end
-  end
+  # Create API key for user
+  before_save :ensure_authentication_token
   
   protected
 

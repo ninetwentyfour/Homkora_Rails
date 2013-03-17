@@ -54,7 +54,7 @@ group :test do
 	gem 'fabrication'
 	gem 'faker'
 	gem 'shoulda-matchers'
-	gem 'typhoeus'
+	gem 'fakeweb'
 	gem 'vcr'
 end
 

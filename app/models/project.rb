@@ -43,10 +43,8 @@ class Project
     cur_sec = (time[2].to_i+addtime[2].to_i) % 60
     hor_in_min = (time[1].to_i+addtime[1].to_i+min_in_sec) / 60
     cur_min = (time[1].to_i+addtime[1].to_i+min_in_sec) % 60
-    cur_hor = (time[0].to_i+addtime[0].to_i+hor_in_min) % 12
-    # if cur_hor==0 
-    #   cur_hor=12
-    # end
+    cur_hor = (time[0].to_i+addtime[0].to_i+hor_in_min)
+
     "#{cur_hor.to_s.rjust(2, '0')}:#{cur_min.to_s.rjust(2, '0')}:#{cur_sec.to_s.rjust(2, '0')}"
   end
   
