@@ -1,5 +1,7 @@
 Homkora | Time Tracking Made Simple
 ========
+[![Build Status](https://travis-ci.org/ninetwentyfour/Homkora_Rails.png?branch=master)](https://travis-ci.org/ninetwentyfour/Homkora_Rails)
+
 Created By: [Travis Berry][2]
 
 [http://twitter.com/homkora][9]
