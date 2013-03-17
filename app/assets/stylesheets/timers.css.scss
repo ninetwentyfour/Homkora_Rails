@@ -2,25 +2,56 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .styled-select select {
-   background: transparent;
-   width: 268px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   }
+	background: transparent;
+	width: 268px;
+	padding: 5px;
+	font-size: 16px;
+	line-height: 1;
+	border: 0;
+	border-radius: 0;
+	height: 34px;
+	-webkit-appearance: none;
+}
 .styled-select {
-   width: 240px;
-   height: 34px;
-   overflow: hidden;
-   background: url(http://d7519xe306djd.cloudfront.net/assets/down_arrow_select.png) no-repeat right #282829;
+	width: 240px;
+	height: 34px;
+	overflow: hidden;
+	background: url(http://d7519xe306djd.cloudfront.net/assets/down_arrow_select.png) no-repeat right #282829;
 	// background: none repeat scroll 0 0 #282829;
 	border-color: #0D0E0E #0D0E0E #333436;
 	border-style: solid;
 	border-width: 1px;
 	color: #FFFFFF;
 	font-size: 19px;
-   }
+}
+.timerAddFormSpacer {
+	width: 73px;
+	height: 10px;
+	float: left;
+}
+.timer-button {
+	margin-left: 339px;
+}
+.timer-form div {
+	float: left;
+}
+.addTimerIndex {
+	padding-top: 15px;
+}
+.hour-edit {
+	display: none;
+}
+.min-edit {
+	display: none;
+}
+.sec-edit {
+	display: none;
+}
+#TimerSearchForm{
+	width:100%;
+}
+.center-save{
+	margin:auto;
+	width:255px;
+	float:none !important
+}

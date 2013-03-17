@@ -1,3 +1,29 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.project-view {
+	background: url("https://s3.amazonaws.com/homkora-static/img/dark-bg.png") repeat scroll 0 0 #111;
+	border: 1px solid #444;
+	padding: 15px;
+	width: 300px;
+	font-size: 25px;
+	color: #999;
+	float: left;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 15px;
+	-moz-box-shadow: 0 1px 7px #111111;
+	-webkit-box-shadow: 0 1px 7px #111111;
+	margin: 20px;
+}
+.project-view h2 {
+	font-size: 35px;
+	color: #eee;
+}
+#project-view-break {
+	width: 100%;
+	float: left;
+}
+#ProjectSearchForm{
+	width:100%;
+}
