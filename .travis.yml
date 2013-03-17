@@ -6,4 +6,7 @@ rvm:
 services:
   - memcache # will start memcached
   - mongodb
+env:
+  global:
+    - secure: "fr0R7EFNaKTn+XQPmyUAlF8XiagqLmKucfwDZdWOqCd+X821Rf0GW8pJlkAK\nTfqx6xCcIqdaQ7NgNfqRs/QeurGubqoHrj0ekIHA8rVqNRKyThkwp013FznC\nkjZgBU5X0m7+mUpXbM5C3L3BdVTL4mqnVO4uSB4vvz8Rvu42jUA="
 script: bundle exec rake spec
