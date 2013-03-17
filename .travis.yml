@@ -5,4 +5,5 @@ rvm:
 # uncomment this line if your project needs to run something other than `rake`:
 services:
   - memcache # will start memcached
+  - mongodb
 script: bundle exec rake spec
