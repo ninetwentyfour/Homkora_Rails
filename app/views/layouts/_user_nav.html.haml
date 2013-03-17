@@ -1,6 +1,6 @@
 %li.dropdown.user_nav
 	%a.dropdown-toggle{:href => '#'}
-		= gravatar_image_tag("#{current_user.email}", :alt => "#{current_user.email}", :gravatar => { :size => 25 }, :style => "vertical-align:middle") + "  #{current_user.username}"
+		= gravatar_image_tag("#{current_user.email}", :alt => "#{current_user.email}", :gravatar => { :size => 25 }, :style => "vertical-align:bottom") + "  #{current_user.username}"
 	%ul
 		%li= link_to "Profile", user_path(current_user)
 		%li= link_to "Logout", destroy_user_session_path, :method => :delete
