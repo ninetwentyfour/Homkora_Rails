@@ -54,8 +54,11 @@ group :test do
 	gem 'fabrication'
 	gem 'faker'
 	gem 'shoulda-matchers'
+  gem 'mocha', "~> 0.13.2", :require => false
 	gem 'fakeweb'
 	gem 'vcr'
+  gem 'simplecov', :require => false
+  gem 'coveralls', :require => false
 end
 
 group :production do
