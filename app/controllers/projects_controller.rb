@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = current_user.projects.new(params[:project])
+    @project = current_user.projects.new(project_params)
     # @project = Project.new(params[:project])
 
     respond_to do |format|
@@ -55,7 +55,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     respond_to do |format|
-      if @project.update_attributes(params[:project])
+      if @project.update_attributes(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
         # format.json { head :no_content }
         format.json { render json: @project, location: @project }
@@ -84,4 +84,8 @@ class ProjectsController < ApplicationController
     render :action => 'index'
   end
   
+  private
+    def project_params
+      params.require(:project).permit(:title, :description)
+    end  
 end

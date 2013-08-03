@@ -1,6 +1,7 @@
 class Timer
   include Mongoid::Document
   include Mongoid::Timestamps
+  include ActiveModel::ForbiddenAttributesProtection
   
   include Tanker
   
@@ -18,7 +19,7 @@ class Timer
   
   after_save :update_project_time
   
-  attr_accessible :title, :description, :time, :project_id
+  # attr_accessible :title, :description, :time, :project_id
   
   # Update the projects total_time
   def update_project_time

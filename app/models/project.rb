@@ -1,6 +1,7 @@
 class Project
   include Mongoid::Document
   include Mongoid::Timestamps
+  include ActiveModel::ForbiddenAttributesProtection
   
   include Tanker
   
@@ -18,7 +19,7 @@ class Project
   after_save :update_tank_indexes, :unless => Proc.new{ Rails.env.test? }
   after_destroy :delete_tank_indexes, :unless => Proc.new{ Rails.env.test? }
   
-  attr_accessible :title, :description
+  # attr_accessible :title, :description
   
   def update_project_time
     unless self.timers.blank?

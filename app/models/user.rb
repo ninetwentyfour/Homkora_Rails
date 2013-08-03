@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include ActiveModel::ForbiddenAttributesProtection
   
   acts_as_user :roles => :admin
   
@@ -52,7 +53,7 @@ class User
   validates_uniqueness_of :username, :email, :case_sensitive => false
   
   attr_accessor :login
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :login
+  # attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :login
   
   has_many :projects, :dependent => :destroy
   

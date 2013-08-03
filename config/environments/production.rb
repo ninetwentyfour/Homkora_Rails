@@ -1,4 +1,5 @@
 Homkora::Application.configure do
+  config.eager_load = true
   # Settings specified here will take precedence over those in config/application.rb
   config.cache_store = :dalli_store
   # Code is not reloaded between requests

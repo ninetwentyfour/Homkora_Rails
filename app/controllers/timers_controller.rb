@@ -37,7 +37,7 @@ class TimersController < ApplicationController
   # POST /timers
   # POST /timers.json
   def create
-    @timer = Timer.new(params[:timer])
+    @timer = Timer.new(timer_params)
 
     respond_to do |format|
       if @timer.save
@@ -56,7 +56,7 @@ class TimersController < ApplicationController
     @timer = Timer.find(params[:id])
 
     respond_to do |format|
-      if @timer.update_attributes(params[:timer])
+      if @timer.update_attributes(timer_params)
         format.html { redirect_to @timer, notice: 'Timer was successfully updated.' }
         format.json { head :no_content }
       else
@@ -93,4 +93,9 @@ class TimersController < ApplicationController
 
     render :action => 'index'
   end
+
+  private
+    def timer_params
+      params.require(:timer).permit(:title, :description, :time, :project_id)
+    end  
 end

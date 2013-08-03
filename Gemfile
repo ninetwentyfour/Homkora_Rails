@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 ruby "2.0.0"
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "mongoid"
+gem "mongoid", github: 'mongoid/mongoid'
 
 gem "devise"
 gem "canard"
@@ -25,12 +25,16 @@ gem 'tanker'
 
 gem 'unicorn'
 
+gem 'jquery-rails'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+# add these gems to help with the transition to rails4:
+gem 'protected_attributes'
+
+group :production, :development do
+	gem 'asset_sync'
+
+  gem 'sass-rails'
+  gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -40,17 +44,11 @@ group :assets do
   gem 'closure-compiler'
 end
 
-gem 'jquery-rails'
-
-group :production, :development do
-	gem 'asset_sync'
-end
-
 gem "rspec-rails", :group => [:test, :development]
 # Gems used only for testing
 group :test do
   gem "database_cleaner"
-  gem "mongoid-rspec"
+  gem "mongoid-rspec", :github => "ninetwentyfour/mongoid-rspec"
 	gem 'fabrication'
 	gem 'faker'
 	gem 'shoulda-matchers'
