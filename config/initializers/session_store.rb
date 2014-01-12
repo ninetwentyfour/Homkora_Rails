@@ -11,5 +11,6 @@ if Rails.env == "test"
 else
   #AnimalTracker::Application.config.session_store :active_record_store
   require 'action_dispatch/middleware/session/dalli_store'
-  Homkora::Application.config.session_store :dalli_store, :namespace => 'sessions', :key => '_foundation_session', :expire_after => 90.minutes
+  # Homkora::Application.config.session_store :dalli_store, :namespace => 'sessions', :key => '_foundation_session', :expire_after => 90.minutes
+  Rails.application.config.session_store ActionDispatch::Session::CacheStore, :expire_after => 90.minutes
 end
