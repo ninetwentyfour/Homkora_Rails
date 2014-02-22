@@ -9,7 +9,7 @@ gem 'rails', '4.0.3'
 gem "mongoid", github: 'mongoid/mongoid'
 
 gem "devise"
-gem "canard", git: "git@github.com:ninetwentyfour/canard.git", branch: "mongoid_4"
+gem "canard", git: "https://github.com/ninetwentyfour/canard.git", branch: "mongoid_4"
 
 gem 'haml-rails'
 gem "redcarpet"
