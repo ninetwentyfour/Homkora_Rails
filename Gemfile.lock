@@ -18,7 +18,7 @@ GIT
       rspec
 
 GIT
-  remote: git@github.com:ninetwentyfour/canard.git
+  remote: https://github.com/ninetwentyfour/canard.git
   revision: 279a7fa83c0420f6b029b63f12552d48395b1b66
   branch: mongoid_4
   specs:
