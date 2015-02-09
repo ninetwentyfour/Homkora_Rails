@@ -1,5 +1,5 @@
 .stopwatch {
-	background:url("http://d7519xe306djd.cloudfront.net/assets/dark-bg.png") repeat scroll 0 0 #111;
+	background:url("https://d7519xe306djd.cloudfront.net/assets/dark-bg.png") repeat scroll 0 0 #111;
 	border: 1px solid #444;
 	padding: 15px;
 	width: 420px;
@@ -43,7 +43,7 @@
 	-moz-box-shadow:none !important;
 	-webkit-box-shadow:none !important;
 	box-shadow:none !important;
-	background:url("http://d7519xe306djd.cloudfront.net/assets/bg.png") repeat scroll 0 0 #222222;
+	background:url("https://d7519xe306djd.cloudfront.net/assets/bg.png") repeat scroll 0 0 #222222;
 }
 
 .stopwatch .start, .stopwatch .stop {
