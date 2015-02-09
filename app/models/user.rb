@@ -58,7 +58,7 @@ class User
   has_many :projects, :dependent => :destroy
   
   # Create API key for user
-  before_save :ensure_authentication_token
+  # before_save :ensure_authentication_token
   
   protected
 
