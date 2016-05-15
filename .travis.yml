@@ -1,7 +1,7 @@
 language: ruby
 bundler_args: --without development production
 rvm:
-  - 2.1.1
+  - 2.3.1
 # uncomment this line if your project needs to run something other than `rake`:
 services:
   - memcache # will start memcached
